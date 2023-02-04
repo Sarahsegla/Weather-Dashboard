@@ -24,6 +24,18 @@ header {
     display: flex;
 }
 
+.small-container {
+    display: flex;
+    justify-content: flex-end;
 
+}
+
+.small-row {
+    border: 1px solid black;
+    padding: 15px;
+    margin: 50px;
+    height: 150px;
+   
+}
 
 

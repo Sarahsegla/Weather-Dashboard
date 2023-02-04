@@ -11,11 +11,13 @@ header {
    
 }
 
-.col-lg-9 {
-   display: flex;
-   background-color: pink;
-   align-items: center;
-   justify-content: center;
+.container-fluid {
+    justify-content: center;
+}
+
+.row {
+    display: flex;
+    
 }
 
 

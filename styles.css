@@ -1,8 +1,25 @@
 header {
     padding: 10px;
     text-align: center;
-    /* background-color: blue; */
     background-image: linear-gradient(to right, rgb(71, 71, 145), blue);
     color: white;
     font-size:15px;
+}
+
+.col-lg-9 {
+    border: 1px solid black;
+   
+}
+
+.container-fluid {
+   display: flex;
+   background-color: pink;
+}
+
+
+.container-fluid > div {
+    background-color: aqua;
+    margin: 10px;
+    padding: 20px;
+    font-size: 30px;
 }

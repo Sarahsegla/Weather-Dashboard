@@ -1,11 +1,11 @@
-var col = $('.col-lg-9');
 
-var today = $('#today');
 
-var todayTitle = $('<h3>');
+var searchInput = document.getElementById('#search-input');
 
-todayTitle.text('london date');
+// var forecast 
 
-var forecast 
+const APIKey = "03067ded181dcabf4f389039837fbc83";
 
-var APIKey = "03067ded181dcabf4f389039837fbc83";
+const queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=";
+
+cityName = searchInput;

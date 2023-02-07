@@ -48,7 +48,7 @@ const queryURL = "https://api.openweathermap.org/data/2.5/weather?q="
 + document.getElementById('search-input').value + "&appid=" + APIKey;
 
 // practice
-const queryURL1 = "https://api.openweathermap.org/data/2.5/weather?q=" 
+const queryURL1 = "https://api.openweathermap.org/data/2.5/forecast?q=" 
 + "sheffield" + "&appid=" + APIKey;
 
 console.log(queryURL1);
@@ -74,4 +74,45 @@ $(".BIGhumidity").text("Humidity:" + response.main.humidity + "%");
 
 })
 
+//five day forecast
+const fiveURL = "https://api.openweathermap.org/data/2.5/forecast?q=" 
++ document.getElementById('search-input').value + "&appid=" + APIKey;
 
+console.log(fiveURL);
+
+$.ajax({
+    url: fiveURL,
+    method: "GET"
+})
+
+.then(function(response) {
+
+console.log(response);
+
+//$(".day1").html("<p>" + response.name + bigDay + "</p>");
+$(".temp1").text("Temp:" + response.list[0].main.temp);
+$(".wind1").text("Wind:" + response.list[0].wind.speed + "KPH");
+$(".humidity1").text("Humidity:" + response.list[0].main.humidity + "%");
+
+//day2
+$(".temp2").text("Temp:" + response.list[9].main.temp);
+$(".wind2").text("Wind:" + response.list[9].wind.speed + "KPH");
+$(".humidity2").text("Humidity:" + response.list[9].main.humidity + "%");
+
+//day3
+$(".temp3").text("Temp:" + response.list[18].main.temp);
+$(".wind3").text("Wind:" + response.list[18].wind.speed + "KPH");
+$(".humidity3").text("Humidity:" + response.list[18].main.humidity + "%");
+
+//day4
+$(".temp4").text("Temp:" + response.list[26].main.temp);
+$(".wind4").text("Wind:" + response.list[26].wind.speed + "KPH");
+$(".humidity4").text("Humidity:" + response.list[26].main.humidity + "%");
+
+//day5
+$(".temp5").text("Temp:" + response.list[34].main.temp);
+$(".wind5").text("Wind:" + response.list[34].wind.speed + "KPH");
+$(".humidity5").text("Humidity:" + response.list[34].main.humidity + "%");
+
+
+})

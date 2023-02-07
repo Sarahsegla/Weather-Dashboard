@@ -42,9 +42,8 @@ function getSavedValue (v) {
 //apikey
 const APIKey = "03067ded181dcabf4f389039837fbc83";
  
-//  const searchInput = $('#search-input').value().trim();
 
-// url works but not input search city
+// url works input search city
 const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" 
 + document.getElementById('search-input').value + "&appid=" + APIKey;
 
@@ -58,34 +57,4 @@ console.log(queryURL);
 
 // work on input 
 
-
-
-var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" ;
-var Key = "03067ded181dcabf4f389039837fbc83";
-var searchString = "";
-var queryURLNew;
-var searchNumber = 0;
-
-$("#search-button").on("click", function () {
-    $(".BIGlist").empty();
-    searchString = $("#search-input").val();
-    queryURLNew = apiURL + searchString + "&appid=" + APIKey;
-    console.log('url', queryURLNew)
-
-
-    $.ajax({
-        url: queryURLNew,
-        method: "GET"
-    }).then(function (result) {
-console.log(result);
-console.log(queryURLNew);
-console.log(result.main);
-
-$(".BIGday").html("<h1>" + result.name);
-
-
-})
-
-
-});
 

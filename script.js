@@ -43,4 +43,12 @@ console.log(queryURL1);
 
 console.log(queryURL);
 
+// work on input 
+
+$("#search-button").on("click", function(event) {
+    event.preventDefault();
+
+    searchInput.val().trim();
+})
+
 

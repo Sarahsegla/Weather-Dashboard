@@ -1,6 +1,5 @@
 
 
-var searchInput = document.getElementById('#search-input');
 
 // var forecast 
 
@@ -25,11 +24,25 @@ const dayFive = moment().add(5, 'days').calendar();
 $('.day5').text(dayFive);
 
 
+document.getElementById('search-input').value = getSavedValue('search-input');
+
+function saveValue(e) {
+    var id = e.id;
+    var val = e.value;
+    localStorage.setItem(id, val);
+}
+
+function getSavedValue (v) {
+    if (!localStorage.getItem(v)) {
+        return "";
+    }
+    return localStorage.getItem(v)
+}
+
 //apikey
 const APIKey = "03067ded181dcabf4f389039837fbc83";
  
-
-cityName = searchInput;
+//  const searchInput = $('#search-input').value().trim();
 
 // url works but not input search city
 const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" 
@@ -45,13 +58,7 @@ console.log(queryURL);
 
 // work on input 
 
-// $("#search-button").on("click", function(event) {
-//     event.preventDefault();
 
-//     searchInput.val().trim();
-// })
-
-$(document).ready(function () {
 
 var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" ;
 var Key = "03067ded181dcabf4f389039837fbc83";
@@ -81,3 +88,4 @@ $(".BIGday").html("<h1>" + result.name);
 
 
 });
+

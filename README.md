@@ -15,7 +15,7 @@
 N/A
 
 ## Depository Link 
-- 
+- https://sarahsegla.github.io/Weather-Dashboard/
 
 ## screenshot
 [Untitled_ Feb 7, 2023 11_44 PM.webm](https://user-images.githubusercontent.com/117079336/217392583-441815b6-b456-43ed-be15-1316e1f96241.webm)

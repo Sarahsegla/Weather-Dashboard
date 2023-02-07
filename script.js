@@ -26,6 +26,14 @@ $('.day5').text(dayFive);
 
 const APIKey = "03067ded181dcabf4f389039837fbc83";
 
-const queryURL = "http://api.openweathermap.org/geo/1.0/direct?q=";
-
 cityName = searchInput;
+
+
+const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" 
++ searchInput + "&appid=" + APIKey;
+
+
+const queryURL1 = "https://api.openweathermap.org/data/2.5/weather?q=" 
++ "sheffield" + "&appid=" + APIKey;
+
+console.log(queryURL1);

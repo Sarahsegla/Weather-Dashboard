@@ -1,8 +1,4 @@
 
-
-
-// var forecast 
-
 // date for current day
 const bigDay = moment().format('L');
 $('.BIGday').text(bigDay);
@@ -23,7 +19,7 @@ $('.day4').text(dayFour);
 const dayFive = moment().add(5, 'days').calendar();
 $('.day5').text(dayFive);
 
-
+// save to localstorage
 document.getElementById('search-input').value = getSavedValue('search-input');
 
 function saveValue(e) {
@@ -89,7 +85,7 @@ $.ajax({
 
 console.log(response);
 
-//$(".day1").html("<p>" + response.name + bigDay + "</p>");
+//day1
 $(".temp1").text("Temp:" + response.list[0].main.temp);
 $(".wind1").text("Wind:" + response.list[0].wind.speed + "KPH");
 $(".humidity1").text("Humidity:" + response.list[0].main.humidity + "%");

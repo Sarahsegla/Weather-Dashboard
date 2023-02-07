@@ -55,6 +55,23 @@ console.log(queryURL1);
 
 console.log(queryURL);
 
-// work on input 
+// work on input temp etc.
+
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+
+.then(function(response) {
+
+console.log(response);
+
+$(".BIGday").html("<p>" + response.name + bigDay + "</p>");
+$(".BIGtemp").text("Temp:" + response.main.temp);
+$(".BIGwind").text("Wind:" + response.wind.speed + "KPH");
+$(".BIGhumidity").text("Humidity:" + response.main.humidity + "%");
+
+
+})
 
 

@@ -62,7 +62,7 @@ $.ajax({
 
 console.log(response);
 
-$(".BIGday").html("<p>" + response.name + bigDay + "</p>");
+$(".BIGday").text( response.name + "(" + bigDay + ")");
 $(".BIGtemp").text("Temp:" + response.main.temp);
 $(".BIGwind").text("Wind:" + response.wind.speed + "KPH");
 $(".BIGhumidity").text("Humidity:" + response.main.humidity + "%");

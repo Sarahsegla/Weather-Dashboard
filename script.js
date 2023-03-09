@@ -1,3 +1,8 @@
+// get elements for input tag and button tag
+var input = document.getElementById('search-input');
+const myButton = document.getElementById(`search-button`);
+
+
 
 // date for current day
 const bigDay = moment().format('L');
@@ -19,21 +24,18 @@ $('.day4').text(dayFour);
 const dayFive = moment().add(5, 'days').calendar();
 $('.day5').text(dayFive);
 
+
+
 // save to localstorage
-document.getElementById('search-input').value = getSavedValue('search-input');
 
-function saveValue(e) {
-    var id = e.id;
-    var val = e.value;
-    localStorage.setItem(id, val);
-}
+myButton.addEventListener("click", function(event) {
+event.preventDefault()
+ 
+var varInput = input.value.trim()
 
-function getSavedValue (v) {
-    if (!localStorage.getItem(v)) {
-        return "";
-    }
-    return localStorage.getItem(v)
-}
+localStorage.setItem("varInput", varInput);
+
+var cityInput = localStorage.getItem("cityInput");
 
 //apikey
 const APIKey = "03067ded181dcabf4f389039837fbc83";
@@ -41,17 +43,11 @@ const APIKey = "03067ded181dcabf4f389039837fbc83";
 
 // url works input search city
 const queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" 
-+ document.getElementById('search-input').value + "&appid=" + APIKey;
++ varInput + "&appid=" + APIKey;
 
-// practice
-const queryURL1 = "https://api.openweathermap.org/data/2.5/forecast?q=" 
-+ "sheffield" + "&appid=" + APIKey;
 
-console.log(queryURL1);
 
-console.log(queryURL);
 
-// work on input temp etc.
 
 $.ajax({
     url: queryURL,
@@ -69,6 +65,10 @@ $(".BIGhumidity").text("Humidity:" + response.main.humidity + "%");
 
 
 })
+
+//button
+
+var button = document.querySelector('#search-button');
 
 //five day forecast
 const fiveURL = "https://api.openweathermap.org/data/2.5/forecast?q=" 
@@ -112,3 +112,18 @@ $(".humidity5").text("Humidity:" + response.list[34].main.humidity + "%");
 
 
 })
+
+
+
+});
+
+    
+
+
+
+
+
+
+
+
+

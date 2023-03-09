@@ -56,12 +56,15 @@ $.ajax({
 
 .then(function(response) {
 
+   
 console.log(response);
+
 
 $(".BIGday").text( response.name + "(" + bigDay + ")");
 $(".BIGtemp").text("Temp:" + response.main.temp);
 $(".BIGwind").text("Wind:" + response.wind.speed + "KPH");
 $(".BIGhumidity").text("Humidity:" + response.main.humidity + "%");
+$(".image").attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
 
 
 })
@@ -82,33 +85,42 @@ $.ajax({
 })
 
 .then(function(response) {
-
+   
+    let IconImages = "https://openweathermap.org/img/wn/" + response.list[0].weather[0].icon + "@2x.png";
 console.log(response);
+console.log(IconImages);
+
+
 
 //day1
 $(".temp1").text("Temp:" + response.list[0].main.temp);
 $(".wind1").text("Wind:" + response.list[0].wind.speed + "KPH");
 $(".humidity1").text("Humidity:" + response.list[0].main.humidity + "%");
+$(".image1").attr("src", IconImages);
 
 //day2
 $(".temp2").text("Temp:" + response.list[9].main.temp);
 $(".wind2").text("Wind:" + response.list[9].wind.speed + "KPH");
 $(".humidity2").text("Humidity:" + response.list[9].main.humidity + "%");
+$(".image2").attr("src", "https://openweathermap.org/img/wn/" + response.list[9].weather[0].icon + "@2x.png");
 
 //day3
 $(".temp3").text("Temp:" + response.list[18].main.temp);
 $(".wind3").text("Wind:" + response.list[18].wind.speed + "KPH");
 $(".humidity3").text("Humidity:" + response.list[18].main.humidity + "%");
+$(".image3").attr("src", "https://openweathermap.org/img/wn/" + response.list[18].weather[0].icon + "@2x.png");
 
 //day4
 $(".temp4").text("Temp:" + response.list[26].main.temp);
 $(".wind4").text("Wind:" + response.list[26].wind.speed + "KPH");
 $(".humidity4").text("Humidity:" + response.list[26].main.humidity + "%");
+$(".image4").attr("src", "https://openweathermap.org/img/wn/" + response.list[26].weather[0].icon + "@2x.png");
 
 //day5
 $(".temp5").text("Temp:" + response.list[34].main.temp);
 $(".wind5").text("Wind:" + response.list[34].wind.speed + "KPH");
 $(".humidity5").text("Humidity:" + response.list[34].main.humidity + "%");
+$(".image5").attr("src", "https://openweathermap.org/img/wn/" + response.list[34].weather[0].icon + "@2x.png");
 
 
 })
@@ -116,9 +128,15 @@ $(".humidity5").text("Humidity:" + response.list[34].main.humidity + "%");
 
 
 });
+//console.log(queryURL);
 
+function weatherIcons(icon) {
+    $.ajax({
+
+    })
+}
     
-
+ 
 
 
 

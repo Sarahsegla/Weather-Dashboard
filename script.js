@@ -39,6 +39,11 @@ var varInput = input.value.trim()
 
 para.innerHTML = varInput;
 history.appendChild(para);
+//input.value = "";
+
+para.addEventListener("click", function(event) {
+    para.value += ' after clicking';
+
 
 localStorage.setItem("varInput", varInput);
 
@@ -133,7 +138,7 @@ $(".image5").attr("src", "https://openweathermap.org/img/wn/" + response.list[34
 })
 
 
-
+})
 });
 
 

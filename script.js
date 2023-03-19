@@ -1,6 +1,7 @@
 // get elements for input tag and button tag
 var input = document.getElementById('search-input');
 const myButton = document.getElementById(`search-button`);
+const history = document.getElementById('history');
 
 
 
@@ -30,8 +31,14 @@ $('.day5').text(dayFive);
 
 myButton.addEventListener("click", function(event) {
 event.preventDefault()
+
+var para = document.createElement('p');
+
  
 var varInput = input.value.trim()
+
+para.innerHTML = varInput;
+history.appendChild(para);
 
 localStorage.setItem("varInput", varInput);
 
@@ -128,13 +135,9 @@ $(".image5").attr("src", "https://openweathermap.org/img/wn/" + response.list[34
 
 
 });
-//console.log(queryURL);
 
-function weatherIcons(icon) {
-    $.ajax({
 
-    })
-}
+
     
  
 

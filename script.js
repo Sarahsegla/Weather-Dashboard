@@ -37,11 +37,15 @@ var para = document.createElement('p');
  
 var varInput = input.value.trim()
 
+
+
 para.innerHTML = varInput;
 history.appendChild(para);
-//input.value = "";
+// input.value = "";
 
 para.addEventListener("click", function(event) {
+
+    
     para.value += ' after clicking';
 
 
